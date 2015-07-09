@@ -5,5 +5,5 @@
     <string name="action_not_now">Not Now</string>
     <string name="dialog_description">This is a DEMO application for Coursera peer assignment. It is inspired by MOMA.\n\nClick visit to see more!</string>
     <string name="dialog_click_more"></string>
-    <string name="url_moma">http://moma.com</string>
+    <string name="url_moma">http://moma.org</string>
 </resources>
