@@ -1,31 +1,30 @@
 package by.styx.modernart;
 
-
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 
-public class MoreDialogFragment extends DialogFragment implements OnClickListener {
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        getDialog().setTitle();
-//        View v = inflater.inflate(R.layout.dialog1, null);
-//        v.findViewById(R.id.btnYes).setOnClickListener(this);
-//        v.findViewById(R.id.btnNo).setOnClickListener(this);
-//        v.findViewById(R.id.btnMaybe).setOnClickListener(this);
-//        return v;
-
-        return super.onCreateView(inflater, container, savedInstanceState);
+public class MoreDialogFragment extends DialogFragment {
+    public MoreDialogFragment() {
     }
 
     @Override
-    public void onClick(View v) {
-
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        return new AlertDialog.Builder(getActivity())
+                .setMessage(R.string.dialog_description)
+                .setPositiveButton(R.string.action_visit_moma, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent("android.intent.action.VIEW",
+                                Uri.parse(getString(R.string.url_moma)));
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(R.string.action_not_now, null)
+                .create();
     }
 }

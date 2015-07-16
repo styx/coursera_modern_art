@@ -11,7 +11,8 @@
         android:id="@+id/seekBar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:max="255" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -27,21 +28,21 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
 
-            <TextView
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="#bdff62"
-                android:id="@+id/textView1" />
+                android:id="@+id/imageView1" />
 
-            <TextView
+            <ImageView
                 android:layout_height="0dp"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:background="#5511ff"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:id="@+id/textView2" />
+                android:id="@+id/imageView2" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,28 +52,28 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
+            <ImageView
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="#ff1111"
-                android:id="@+id/textView3" />
+                android:id="@+id/imageView3" />
 
-            <TextView
+            <ImageView
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="#cccccc"
-                android:id="@+id/textView4"
+                android:id="@+id/imageView4"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"/>
 
-            <TextView
+            <ImageView
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="#554171"
-                android:id="@+id/textView5" />
+                android:id="@+id/imageView5" />
         </LinearLayout>
     </LinearLayout>
 

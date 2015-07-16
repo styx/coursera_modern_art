@@ -1,9 +1,6 @@
 package by.styx.modernart;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -33,26 +30,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_more) {
-            AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
-            alertBuilder.setMessage(R.string.dialog_description);
-            alertBuilder.setCancelable(true);
-            alertBuilder.setPositiveButton(R.string.action_visit_moma,
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            Intent intent = new Intent("android.intent.action.VIEW",
-                                    Uri.parse(getString(R.string.url_moma)));
-                            startActivity(intent);
-                            dialog.cancel();
-                        }
-                    });
-            alertBuilder.setNegativeButton(R.string.action_not_now,
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
+            DialogFragment dialog = new MoreDialogFragment();
+            dialog.show(getFragmentManager(), "showMore");
 
-            alertBuilder.create().show();
             return true;
         }
 
